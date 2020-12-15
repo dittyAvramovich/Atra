@@ -16,20 +16,25 @@ export default class StartUpList extends React.Component{
 
     this.handleChange = this.handleChange.bind(this);
   }
-
-  handleChange(e) 
+ 
+  handleChange=(e) =>
   {
-     this.setState({category:e.target});
-     console.log("category Selected!!",this.state.category);
-    
+    //  this.setState({category:e.target});
+    //  console.log("category Selected!!",this.state.category);
+      const state = this.state
+      state[e.target.name] = e.target.value;
+      this.setState(state);
+      console.log("category Selected!!",this.state.category);
   }
 
   render() {
+    const {category } = this.state;
     return (
       <div >
         <div>
       
-           <select value={this.state.category} onChange={(e)=>this.handleChange(e.target.value)}>
+           <select name="category" value={category} onChange={ this.handleChange}>
+           {/* onChange={(e)=>this.handleChange(e.target.value)} */}
             {options.map((option) => (
               <option value={option.value} >{option.label} 
               </option>
