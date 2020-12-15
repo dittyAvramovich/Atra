@@ -11,7 +11,7 @@ import Select from './selectt';
 
 export default () => {
   function search() {
-console.log("jg,hjk")
+
 
   }
   return (
