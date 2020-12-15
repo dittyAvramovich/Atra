@@ -33,11 +33,11 @@ export const Routes = () => {
 		<Router>
 		  	<Suspense fallback={<div>Loading...</div>}>
 				<Switch>
-					<Route path="/login" component={Login}/>
+					{/* <Route path="/login" component={Login}/>
 					<PrivateRoute isLoggedIn={ loggedIn } path="/" component={Admin} />
 					<Route>
 	   					<Redirect to="/login" />
-					</Route>
+					</Route> */}
 				</Switch>
 		 	</Suspense>
 		</Router>

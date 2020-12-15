@@ -1,3 +1,5 @@
+import produce from 'immer';
+import createReducer from "./reducerUtils";
 import { USER_LOGIN } from '../actions/login.actions';
 
 const initialState = {
@@ -7,21 +9,16 @@ const initialState = {
 	errMsg: ''
 
 };
-function loginReducer(state = initialState, action) {
 
-	if (action.type === USER_LOGIN) {
-
-		return {
-			...state,
-			response: action.payload.response,
-			token: action.payload.token,
-			username: action.payload.username,
-			errMsg: action.payload.errMsg
-
-		};
+const loginReducer = {
+	userLogin(state, action) {
+		state.response = action.payload.response;
+		state.token = action.payload.token;
+		state.username = action.payload.username;
+		state.errMsg = action.payload.errMsg;
 	}
 
-	return state;
+	// here add more function that this reducer do
+}
 
-};
-export default loginReducer;
+export default produce((state, action) => createReducer(state, action, loginReducer), initialState);

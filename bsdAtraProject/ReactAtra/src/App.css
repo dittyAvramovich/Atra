@@ -1,12 +1,8 @@
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
-a,abbr,acronym,address,applet,article,
-aside,audio,b,big,blockquote,body,canvas,caption,
-center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,
-figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,
-legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike
-,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+*/
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 
 
 
@@ -14,7 +10,51 @@ legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,
 /* main global css */
 
 /* html elements */
+@import "~bootstrap/dist/css/bootstrap.css";
 
+
+
+#textsignin{
+top: 29px;
+left: 1564px;
+width: 91px;
+height: 23px;
+text-align: center;
+font: normal normal medium 18px/17px Poppins;
+letter-spacing: 2.07px;
+color: #4E4EFE;
+text-transform: uppercase;
+opacity: 1;
+}
+#Nav{
+	border: solid black;
+}
+#pnavbar{
+	color:black;
+}
+.c{
+	direction: rtl;
+}
+#signin{
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	border: 2px solid #4E4EFE;
+border-radius: 25px;
+opacity: 1;
+
+}
+#knowme{
+	 
+	top: 23px;
+	left: 276px;
+	width: 122px;
+
+	height: 20px;
+	text-align: left;
+	font: normal normal medium 30px/27px Rubik;
+	letter-spacing: 0px;
+	color: #4E4EFE;
+	opacity: 1;
+}
 h1 {
 	font-size: 4vw;
 }
@@ -36,10 +76,7 @@ input {
     width: 100%;
 }
 
-h3 {}
-h4 {}
-h5 {}
-h6 {}
+ 
 
 p {
 	font-size: 1.4vw;
@@ -118,3 +155,19 @@ p {
 	justify-content: flex-end; 
 }
 /* end flex */
+#FaSpinner{
+    color: #4E4EFE;
+    opacity: 1;
+
+}
+.col-12 {
+    padding-right: 0vh;
+    padding-left: 0vh;
+}
+#fo{
+	margin-right: 0vh;
+}
+.footer{
+	background-color: #4E4EFE;
+	 
+}
