@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Navbar } from 'react-bootstrap';
 import img2 from '../../assets/m.jpg';
 import './home.css';
@@ -6,10 +6,19 @@ import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
 import Footer from '../footer';
 import Select from './selectt';
+import { connect } from 'react-redux';
+import { fechCategories } from '../../redux/actions/category.action';
 
 
 
-export default () => {
+
+function Home(props) {
+
+  useEffect(() => {
+    props.fechCategories();
+  }, [])
+
+
   function search() {
 
 
@@ -36,19 +45,19 @@ export default () => {
         <div className="row b">
           <div className="container ">
             <div className="row d-flex justify-content-center  popularCategory">
-             <button type="button" class="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>gserhhre</button>   
-             <button type="button" class="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>ahrebd</button>   
-             <button type="button" class="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>dbdbhggh</button>   
-             <button type="button" class="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>dbnndd</button>   
-             <button type="button" class="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>ggddg</button>   
+              <button type="button" class="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>gserhhre</button>
+              <button type="button" class="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>ahrebd</button>
+              <button type="button" class="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>dbdbhggh</button>
+              <button type="button" class="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>dbnndd</button>
+              <button type="button" class="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>ggddg</button>
             </div>
 
             <div className="row  d-flex justify-content-center popularCategory">
-             <button type="button" className="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>dewegfvr</button>   
-             <button type="button" className="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>dfdfssfzc</button>   
-             <button type="button" className="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>fffffffff</button>   
-             <button type="button" className="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>fffff</button>   
-             <button type="button" className="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>fffff</button>   
+              <button type="button" className="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>dewegfvr</button>
+              <button type="button" className="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>dfdfssfzc</button>
+              <button type="button" className="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>fffffffff</button>
+              <button type="button" className="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>fffff</button>
+              <button type="button" className="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>fffff</button>
 
             </div>
           </div>
@@ -76,3 +85,19 @@ export default () => {
   )
 }
 
+export default connect(
+  (state) => {
+    return {
+      categories: state.category.categories,
+      name: state.category.name
+    }
+  },
+  (dispatch) => {
+    return {
+      fechCategories: function () {
+        dispatch(fechCategories())
+      }
+    }
+
+  }
+)(Home)

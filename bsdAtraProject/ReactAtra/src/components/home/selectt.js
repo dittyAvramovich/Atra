@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react'
 import Select from 'react-select'
-
+// import cardService from './../services/ca'
 const options = [
   { value: 'chocolate', label: 'Chocolate' },
   { value: 'strawberry', label: 'Strawberry' },
@@ -16,7 +16,10 @@ export default class StartUpList extends React.Component{
 
     this.handleChange = this.handleChange.bind(this);
   }
- 
+//  componentDidMount=()=>{
+  // const dataFromServer = await startUpservice.getStartUp();
+
+//  }
   handleChange=(e) =>
   {
     //  this.setState({category:e.target});

@@ -6,16 +6,25 @@ import Navbar from './components/navbar';
 import { FaBeer } from 'react-icons/fa';
 import Select from './components/home/selectt';
 import Footer from './components/footer';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+
+
 function App() {
+
+
+
+
   return (
-    <div className="App">
-      {/* <Routes /> */}
-      <Navbar />
-      <Home />
-      <Footer />
+    <Provider store={store}>
+      <div className="App">
 
-
-    </div>
+        {/* <Routes /> */}
+        <Navbar />
+        <Home />
+        <Footer />
+      </div>
+     </Provider>
   );
 }
 
