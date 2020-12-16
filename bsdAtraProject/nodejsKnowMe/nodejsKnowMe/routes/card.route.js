@@ -3,13 +3,14 @@ let mongoose = require('mongoose'),
   router = express.Router();
   
 
-// StartUp Model
-let startUpSchema = require('../models/StartUp');
+// Card Model
+ 
+let cardSchema=require('../models/Card');
 
 // CREATE StartUp
 router.route('/create-startup').post((req, res, next) => {
   console.log(req.body)
-  startUpSchema.create(req.body, (error, data) => {
+  cardSchema.create(req.body, (error, data) => {
     debugger;
     if (error) {
       
@@ -21,9 +22,9 @@ router.route('/create-startup').post((req, res, next) => {
   })
 });
 
-// READ StartUp
+// READ Card
 router.route('/').get((req, res) => {
-  startUpSchema.find((error, data) => {
+  cardSchema.find((error, data) => {
     if (error) {
       return next(error)
     } else {
@@ -32,9 +33,9 @@ router.route('/').get((req, res) => {
   })
 })
 
-// Get Single StartUp
+// Get Single Card
 router.route('/edit-startup/:id').get((req, res) => {
-  startUpSchema.findById(req.params.id, (error, data) => {
+  cardSchema.findById(req.params.id, (error, data) => {
     if (error) {
       return next(error)
     } else {
