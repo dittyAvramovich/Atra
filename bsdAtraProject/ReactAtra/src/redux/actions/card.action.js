@@ -3,18 +3,18 @@ import cardService from '../../services/card.service';
 export const SHOW_CARDS = '[card] SHOW_CARDS';
 
 
-export  function setCard(card) {
+export  function setCard(cards) {
     return {
         type: SHOW_CARDS,
-        payload: card
+        payload: cards
     }
 
 }
 export  function fechIdCard() {
 
     return async (dispatch) => {
-        const card = await cardService.fetchCardById();
-        dispatch(setCard(card));
+        const cards = await cardService.fetchCardById();
+        dispatch(setCard(cards));
         
     }
 

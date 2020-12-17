@@ -7,6 +7,6 @@ import CardReducer from './card.reducer';
 
 export default combineReducers({
     category: CategoryReducer,
-    card:CardReducer
+    cards:CardReducer
     // IdCategory:
 })
