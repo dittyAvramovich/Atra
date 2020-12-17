@@ -5,7 +5,8 @@ import { SET_CATEGORY } from '../actions/category.action';
 
 const initialState = {
     categories: {},
-    name: ""
+   
+     
 }
 
 export default function CategoryReducer(state = initialState, action) {

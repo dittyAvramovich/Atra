@@ -89,7 +89,7 @@ export default connect(
   (state) => {
     return {
       categories: state.category.categories,
-      name: state.category.name
+       
     }
   },
   (dispatch) => {

@@ -1,21 +1,30 @@
 
 import React, { Component } from 'react'
 import Select from 'react-select'
-// import cardService from './../services/ca'
+import { connect } from 'react-redux';
+// import { fechIdCategory } from '../../redux/actions/card.action';
+
 const options = [
   { value: 'chocolate', label: 'Chocolate' },
   { value: 'strawberry', label: 'Strawberry' },
   { value: 'vanilla', label: 'Vanilla' }
 ]
+// function Home(props) {
+
+  // useEffect(() => {
+  //   props.fechCategories();
+  // }, [])
+
 export default class StartUpList extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      category: " ",
+      categoryId: " ",
     };
 
     this.handleChange = this.handleChange.bind(this);
   }
+  
 //  componentDidMount=()=>{
   // const dataFromServer = await startUpservice.getStartUp();
 
@@ -27,7 +36,8 @@ export default class StartUpList extends React.Component{
       const state = this.state
       state[e.target.name] = e.target.value;
       this.setState(state);
-      console.log("category Selected!!",this.state.category);
+      console.log("category Selected!!",this.state.categoryId);
+      // props.fechIdCard(this.state.categoryId);
   }
 
   render() {
@@ -36,7 +46,7 @@ export default class StartUpList extends React.Component{
       <div >
         <div>
       
-           <select name="category" value={category} onChange={ this.handleChange}>
+           <select name="categoryId" value={category} onChange={ this.handleChange}>
            {/* onChange={(e)=>this.handleChange(e.target.value)} */}
             {options.map((option) => (
               <option value={option.value} >{option.label} 
@@ -50,7 +60,24 @@ export default class StartUpList extends React.Component{
   }
 }
 
+// export default connect(
+//   (state) => {
+//     return {
 
+//         categories: state.category.categories,
+//         card:state.card.cardList
+       
+//     }
+//   },
+//   (dispatch) => {
+//     return {
+//       fechIdCard: function (id) {
+//         dispatch(fechIdCard(id))
+//       }
+//     }
+
+//   }
+// )(Home)
 
 
 
