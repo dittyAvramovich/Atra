@@ -4,11 +4,9 @@ import axios from 'axios';
 
 class cardService {
 
+ fetchCard() {
 
-
-    fetchCard() {
-
-        debugger
+        debugger;
 
       
         return axios.get('http://localhost:4000/category/allCategory').then(({ data }) => data);

@@ -24,6 +24,7 @@ router.route('/create-startup').post((req, res, next) => {
 router.get('/allCategory', (req, res) => {
 
     console.log("hi")
+
  
     Category.find().then((result) => {
         console.log(result)
