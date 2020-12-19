@@ -24,8 +24,6 @@ router.route('/create-startup').post((req, res, next) => {
 router.get('/allCategory', (req, res) => {
 
     console.log("hi")
-
- 
     Category.find().then((result) => {
         console.log(result)
         res.status(200).json({
@@ -34,10 +32,17 @@ router.get('/allCategory', (req, res) => {
     })
 
 })
+router.get('/', function(req, res, next) {
+    Category.find(function (err, products) {
+    if (err) return next(err);
+    res.json(products);
+  });
+});
 
 // Get Single Card
-router.get('/CategoryById/:id', (req, res) => {
+router.get('/allCategoryy/:id', (req, res) => {
     Category.findById(req.params.id, (error, data) => {
+        console.log(data)
         if (error) {
             return next(error)
         } else {
