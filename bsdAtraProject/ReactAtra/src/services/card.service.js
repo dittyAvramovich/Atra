@@ -11,7 +11,7 @@ class cardService {
         debugger
 
       
-        return axios.get('http://localhost:4000/card/allCard').then(({ data }) => data);
+        return axios.get('http://localhost:4000/category/allCategory').then(({ data }) => data);
 
         // return axios.get('https://academeez-chat.herokuapp.com/api/users').then(({data})=>data)
         // .then((res) => {
@@ -23,7 +23,7 @@ class cardService {
 
         }
         fetchCardById(id){
-        return axios.get(`http://localhost:4000/${id}`).then(({ data }) => data);
+        return axios.get(`http://localhost:4000/card/cardById/${id}`).then(({ data }) => data);
         }
 
 

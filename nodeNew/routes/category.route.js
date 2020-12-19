@@ -1,15 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-
 // Card Model
 
-const CardSchema = require('../models/card');
+const Category = require('../models/category');
 
 // CREATE StartUp
 router.route('/create-startup').post((req, res, next) => {
     console.log(req.body)
-    CardSchema.create(req.body, (error, data) => {
+    Category.create(req.body, (error, data) => {
         debugger;
         if (error) {
 
@@ -22,11 +21,11 @@ router.route('/create-startup').post((req, res, next) => {
 });
 
 // READ Card
-router.get('/allCard', (req, res) => {
+router.get('/allCategory', (req, res) => {
 
     console.log("hi")
  
-    CardSchema.find().then((result) => {
+    Category.find().then((result) => {
         console.log(result)
         res.status(200).json({
             result
@@ -36,8 +35,8 @@ router.get('/allCard', (req, res) => {
 })
 
 // Get Single Card
-router.get('/card/cardById/:id', (req, res) => {
-    CardSchema.findById(req.params.id, (error, data) => {
+router.get('/CategoryById/:id', (req, res) => {
+    Category.findById(req.params.id, (error, data) => {
         if (error) {
             return next(error)
         } else {
