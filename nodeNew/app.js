@@ -2,6 +2,7 @@ const express = require('express')
 const app = express();
 const mongoose = require('mongoose');
 const cardRoute =require('./routes/card.route');
+const categoryRoute=require('./routes/category.route')
 
 const bodyParser = require('body-parser');
 
@@ -35,7 +36,7 @@ app.use(bodyParser.json())
 
 
 app.use('/card',cardRoute);
-// app.use('/category',categoryRoute);
+ app.use('/category',categoryRoute);
 
 
 app.get('/', (req, res) => {
