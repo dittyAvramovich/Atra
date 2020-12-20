@@ -23,6 +23,7 @@ export  function fechCategories() {
     return async (dispatch) => {
         const categories = await cardService.fetchCard();
         dispatch(setCategory(categories));
+        console.log(categories);
 
     }
     
