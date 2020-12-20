@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 
-mongoose.connect(`mongodb+srv://rivka:314792rb@cluster0.iutps.mongodb.net/knowmedb?retryWrites=true&w=majority`, {
+mongoose.connect(`mongodb+srv://rivka:314792rb@cluster0.iutps.mongodb.net/leaderDB?retryWrites=true&w=majority`, {
     useNewUrlParser: true,  
     
     useUnifiedTopology: true

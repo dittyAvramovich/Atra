@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+// const mongoose=require(mongoose);
 // Card Model
 
 const Category = require('../models/category');
@@ -21,17 +21,24 @@ router.route('/create-startup').post((req, res, next) => {
 });
 
 // READ Card
-router.get('/allCategory', (req, res) => {
+// router.get('/allCategory',(req, res) => {
 
-    console.log("hi")
-    Category.find().then((result) => {
-        console.log(result)
-        res.status(200).json({
-            result
-        });
-    })
+//     console.log("hi")
+//     Category.find().then((result) => {
+//         console.log(result)
+//         res.status(200).json({
+//             result
+//         });
+//     })
 
+// })
+router.get('/allCategory',async(req, res) => {
+const r=await Category.find();
+console.log(r);
 })
+
+
+
 router.get('/', function(req, res, next) {
     Category.find(function (err, products) {
     if (err) return next(err);

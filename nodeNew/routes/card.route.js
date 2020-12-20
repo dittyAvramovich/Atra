@@ -38,6 +38,8 @@ router.get('/allCard', (req, res) => {
 // Get Single Card
 router.get('/card/cardById/:id', (req, res) => {
     CardSchema.findById(req.params.id, (error, data) => {
+        console.log("id!!")
+        console.log(data);
         if (error) {
             return next(error)
         } else {
