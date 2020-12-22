@@ -26,6 +26,9 @@ class SelectComponent extends React.Component {
 
   componentDidMount() {
     this.props.fechCategories();
+    console.log(this.props.categories+"this is my categories");
+    console.log(this.props.categories.id);
+
   }
 
 
@@ -46,21 +49,48 @@ class SelectComponent extends React.Component {
   }
 
   render() {
-    const { category } = this.state;
+    const { categoryy } = this.state;
+
+    //const {categories}=this.props.state;
     return (
       <div >
         <div>
+<h1>hiiii</h1>
+{this.props.categories.length}
 
-          <select name="categoryId" value={category} onChange={this.handleChange}>
+          <select name="categoryId" value={categoryy} onChange={this.handleChange}>
             {/* onChange={(e)=>this.handleChange(e.target.value)} */}
-            {options.map((option) => (
+            {this.props.categories &&
+
+          alert("hgf")
+             // this.props.categories.map((category1) => <div > {category1._id}</div>)
+
+            //   <option key={option} value={option.id} >{option.categoryName}  
+            //   </option>
+            // ))
+          }
+
+            <div>
+              {this.props.categories.length > 0  &&
+
+                this.props.categories.map((user, i) => {
+                  if (user._id != null) {
+                    return (<p   key={i} >
+                      {user._id}
+                    </p>)
+                  }
+                })
+              }
+</div>
+
+              {/* {options.map((option) => (
               <option value={option.value} >{option.label}
               </option>
-            ))}
-            {/* onClick={this.handleChange(option.value)}   */}
+            ))} */}
+              {/* onClick={this.handleChange(option.value)}   */}
           </select>
         </div>
-      </div>
+        </div>
     );
   }
 }
@@ -68,18 +98,18 @@ class SelectComponent extends React.Component {
 export default connect(
   (state) => {
     return {
-      categories: state.category.categories,
+          categories: state.category.categories,
       card: state.cards.cardList
     }
   },
   (dispatch) => {
     return {
-      fechIdCard: function (id) {
-        dispatch(fechIdCard(id))
-      },
+          fechIdCard: function (id) {
+          dispatch(fechIdCard(id))
+        },
       fechCategories: function () {
-        dispatch(fechCategories())
-      }
+          dispatch(fechCategories())
+        }
     }
 
   }
