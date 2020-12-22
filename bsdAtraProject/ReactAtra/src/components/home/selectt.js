@@ -25,9 +25,10 @@ class SelectComponent extends React.Component {
 
 
   componentDidMount() {
-    this.props.fechCategories();
+   // this.props.fechCategories();
+   this.props.fechIdCard();
     console.log(this.props.categories+"this is my categories");
-    console.log(this.props.categories.id);
+  ///  console.log(this.props.categories.id);
 
   }
 
@@ -56,7 +57,7 @@ class SelectComponent extends React.Component {
       <div >
         <div>
 <h1>hiiii</h1>
-{this.props.categories.length}
+{/* {this.props.categories.length} */}
 
           <select name="categoryId" value={categoryy} onChange={this.handleChange}>
             {/* onChange={(e)=>this.handleChange(e.target.value)} */}
@@ -70,8 +71,8 @@ class SelectComponent extends React.Component {
             // ))
           }
 
-            <div>
-              {this.props.categories.length > 0  &&
+            {/* <div>
+              {this.props.categories &&
 
                 this.props.categories.map((user, i) => {
                   if (user._id != null) {
@@ -81,7 +82,7 @@ class SelectComponent extends React.Component {
                   }
                 })
               }
-</div>
+</div> */}
 
               {/* {options.map((option) => (
               <option value={option.value} >{option.label}
