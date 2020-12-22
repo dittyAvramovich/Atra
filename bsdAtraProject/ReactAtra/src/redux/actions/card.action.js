@@ -10,10 +10,21 @@ export  function setCard(cards) {
     }
 
 }
-export  function fechIdCard() {
+
+// export  function fechIdCard() {
+
+//     return async (dispatch) => {
+//         const cards = await cardService.fetchCardById();
+//         dispatch(setCard(cards));
+        
+//     }
+
+// }
+
+export  function fetchCards() {
 
     return async (dispatch) => {
-        const cards = await cardService.fetchCardById();
+        const cards = await cardService.fetchCards();
         dispatch(setCard(cards));
         
     }

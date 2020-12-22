@@ -36,7 +36,7 @@ router.get('/allCard', (req, res) => {
 })
 
 // Get Single Card
-// router.get('/card/cardById/:id', (req, res) => {
+// router.get('/cardById/:id', (req, res) => {
 //     debugger;
 //     console.log("yes")
 //     CardSchema.findById(req.params.id, (error, data) => {
@@ -49,8 +49,8 @@ router.get('/allCard', (req, res) => {
 //         }
 //     })
 // })
-
-router.get('/card/cardById/:id', function(req, res, next) {
+ 
+  router.get('/cardById/:id', function(req, res, next) {
     console.log("yes");
   CardSchema.findById(req.params.id, function (err, post) {
     if (err) return next(err);

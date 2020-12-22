@@ -25,7 +25,8 @@ function Home(props) {
   }
   return (
     <>
-      <div class="container-fluid   ">
+
+      <div class="container-fluid">
         <div class="row a">
           <div class="container input col-9 ">
             <div class="container searchcontainer col-0  ">
@@ -89,7 +90,7 @@ export default connect(
   (state) => {
     return {
       categories: state.category.categories,
-       
+
     }
   },
   (dispatch) => {

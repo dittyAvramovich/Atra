@@ -21,17 +21,17 @@ router.route('/create-startup').post((req, res, next) => {
 });
 
 // READ Card
-// router.get('/allCategory',(req, res) => {
+router.get('/allCategory',(req, res) => {
 
-//     console.log("hi")
-//     Category.find().then((result) => {
-//         console.log(result)
-//         res.status(200).json({
-//             result
-//         });
-//     })
+    console.log("hi")
+    Category.find().then((result) => {
+        console.log(result)
+        res.status(200).json({
+            result
+        });
+    })
 
-// })
+})
 // router.get('/allCategory',async(req, res) => {
 // const r=await Category.find();
 // console.log(r);
@@ -47,7 +47,7 @@ router.get('/', function(req, res, next) {
 });
 
 // Get Single Card
-router.get('/allCategoryy/:id', (req, res) => {
+router.get('/CategoryById/:id', (req, res) => {
     Category.findById(req.params.id, (error, data) => {
         console.log(data)
         if (error) {

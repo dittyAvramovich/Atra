@@ -2,8 +2,9 @@
 import React, { Component } from 'react'
 import Select from 'react-select'
 import { connect } from 'react-redux';
-import { fechIdCard } from '../../redux/actions/card.action';
+import { fetchCards } from '../../redux/actions/card.action';
 import { fechCategories } from '../../redux/actions/category.action';
+import Popup from '../popup/popup';
 
 const options = [
   { value: 'chocolate', label: 'Chocolate' },
@@ -18,6 +19,10 @@ class SelectComponent extends React.Component {
     super(props);
     this.state = {
       categoryId: 2,
+      category: {},
+      cardsByIdCategory: {},
+      flagPopup: false
+
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -25,13 +30,38 @@ class SelectComponent extends React.Component {
 
 
   componentDidMount() {
-   // this.props.fechCategories();
-   this.props.fechIdCard();
-    console.log(this.props.categories+"this is my categories");
-  ///  console.log(this.props.categories.id);
+    console.log(this.props.categories);
+    // this.props.fechCategories();
+    debugger
+    this.props.fetchCards();
+    console.log(this.props.categories + "this is my categories");
+    ///  console.log(this.props.categories.id);
 
   }
 
+  componentDidUpdate(prevProps, prevstate) {
+
+
+    let cards = [];
+
+    if (prevstate.category != this.state.category)
+      if (this.state.category._id && this.props.cardList.length) {
+
+        this.props.cardList.forEach(card => {
+          if (card.categoryId === this.state.category._id) {
+            cards.push(card);
+          }
+        });
+
+        this.setState({ cardsByIdCategory: cards })
+
+      }
+    if (prevstate.cardsByIdCategory != this.state.cardsByIdCategory) {
+      console.log(this.state.cardsByIdCategory)
+    }
+
+
+  }
 
 
 
@@ -49,49 +79,48 @@ class SelectComponent extends React.Component {
     this.props.fechIdCard(this.state.categoryId);
   }
 
+
+  setFlagPopup=()=>{
+    this.setState({flagPopup:false})
+  }
+
+  yourChangeHandler(event) {
+
+  
+  this.setState({flagPopup:false})
+
+    this.setState({ flagPopup: true })
+    this.props.categories.forEach(async (element) => {
+      if (element.categoryName === event.target.value) {
+        await this.setState({ category: element })
+        console.log(this.state.category)
+      }
+    });
+
+
+  }
+
   render() {
-    const { categoryy } = this.state;
-
-    //const {categories}=this.props.state;
     return (
-      <div >
+      <div>
+        {
+          this.state.flagPopup && <Popup setFlagPopup={this.setFlagPopup} cardsByIdCategory={this.state.cardsByIdCategory}></Popup>
+        }
+        {
+          this.state.cardsByIdCategory && this.state.cardsByIdCategory.cagetoryId
+        }
+
         <div>
-<h1>hiiii</h1>
-{/* {this.props.categories.length} */}
-
-          <select name="categoryId" value={categoryy} onChange={this.handleChange}>
-            {/* onChange={(e)=>this.handleChange(e.target.value)} */}
-            {this.props.categories &&
-
-          alert("hgf")
-             // this.props.categories.map((category1) => <div > {category1._id}</div>)
-
-            //   <option key={option} value={option.id} >{option.categoryName}  
-            //   </option>
-            // ))
-          }
-
-            {/* <div>
-              {this.props.categories &&
-
-                this.props.categories.map((user, i) => {
-                  if (user._id != null) {
-                    return (<p   key={i} >
-                      {user._id}
-                    </p>)
-                  }
-                })
-              }
-</div> */}
-
-              {/* {options.map((option) => (
-              <option value={option.value} >{option.label}
-              </option>
-            ))} */}
-              {/* onClick={this.handleChange(option.value)}   */}
+          <h1>hiiii</h1>
+          <select class="form-control" id="exampleFormControlSelect1"
+            onChange={this.yourChangeHandler.bind(this)}>
+            {this.props.categories.length
+              && this.props.categories.map((category) =>
+                <option key={category._id}>{category.categoryName}</option>
+              )}
           </select>
         </div>
-        </div>
+      </div>
     );
   }
 }
@@ -99,18 +128,18 @@ class SelectComponent extends React.Component {
 export default connect(
   (state) => {
     return {
-          categories: state.category.categories,
-      card: state.cards.cardList
+      categories: state.category.categories,
+      cardList: state.cards.cardList
     }
   },
   (dispatch) => {
     return {
-          fechIdCard: function (id) {
-          dispatch(fechIdCard(id))
-        },
+      fetchCards: function () {
+        dispatch(fetchCards())
+      },
       fechCategories: function () {
-          dispatch(fechCategories())
-        }
+        dispatch(fechCategories())
+      }
     }
 
   }
