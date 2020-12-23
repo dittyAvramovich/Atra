@@ -46,3 +46,10 @@
     border-radius: 18px;
     border: 1px solid #cfcece;
   }
+  .card{
+    width: 150px;
+    height: 150px;
+    display:inline-block !important;
+    margin: 25px;
+    border: solid 3px blue;
+}

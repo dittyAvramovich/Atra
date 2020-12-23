@@ -2,7 +2,7 @@
   .a{
       
     height: 90vh;
-      background-image: url('../../assets/home.JPG') ;  
+      background-image: url('../../assets/home1.jpg') ;  
       background-repeat: no-repeat; 
     }
     .input{
@@ -73,14 +73,17 @@ opacity: 1; */
   .h30{
       height: 100vh;
   }
-  /* .row{
-       
-    
-  } */
+ .btncategory{
+     width: 30vh;
+ }
   .popularCategory{
-      border:rgb(179, 28, 28) 4px solid;
+      
       height: 15vh;
      
+  }
+  .selectt{
+      padding-top: 54vh;
+      padding-left: 120vh;
   }
 /* .buttonpopularCategory{
     top: 1223px;

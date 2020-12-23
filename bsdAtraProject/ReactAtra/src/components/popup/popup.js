@@ -39,24 +39,33 @@ export default (props) => {
                     {/* <button className="close" > */}
                     {/* &times; */}
                     {/* </button> */}
-                    <div className="header"> Dear user</div>
+                    <div className="header"> {"תוצאות החיפוש שלך"}</div>
                     <div className="content">
                         {
                             props.cardsByIdCategory.length && props.cardsByIdCategory.map((card) =>
-                                <h5 className="App">
-                                    {card.agentDetails.fullName}
-                                </h5>)
+                                // <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                                //     <div class="card-header">Header</div>
+                                    <div class="card stylecard" >
+                                        <h5 className="App">
+                                            {/* {card._id} */}
+                                            {card.agentDetails.fullName} 
+
+                                        </h5> 
+                                    {/* </div>*/}
+                                </div> 
+                            )
+
                         }
 
                     </div>
                     <div className="actions">
                         <button style={{ width: '100px' }} className="btn btn-primary mr-4"
                             onClick={props.setFlagPopup}>
-                            NO
+                            סגור
                          </button>
 
-                        <button
-                            style={{ width: '100px' }} className="btn btn-primary">YES</button>
+                        {/* <button
+                            style={{ width: '100px' }} className="btn btn-primary">YES</button> */}
                     </div>
                 </div>
             )}

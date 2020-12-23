@@ -111,7 +111,6 @@ class SelectComponent extends React.Component {
         }
 
         <div>
-          <h1>hiiii</h1>
           <select class="form-control" id="exampleFormControlSelect1"
             onChange={this.yourChangeHandler.bind(this)}>
             {this.props.categories.length

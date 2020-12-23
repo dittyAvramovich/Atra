@@ -27,8 +27,9 @@ function Home(props) {
     <>
 
       <div class="container-fluid">
-        <div class="row a">
-          <div class="container input col-9 ">
+        <div class="row   a">
+       <div class="selectt  col-9"><Select /></div> 
+          {/* <div class="container input col-9 ">
             <div class="container searchcontainer col-0  ">
               <p class="p pt-3 ">
                 What are you looking for?
@@ -38,29 +39,28 @@ function Home(props) {
               <Select />
             </div>
             <div class="container searchcontainer col-8">
-              {/* <Select /> */}
-              {/* <button type="submit" className="buttonsearch" onClick={search()}></button>  */}
-            </div>
-          </div>
+            
+            </div> 
+          </div>*/}
         </div>
         <div className="row b">
           <div className="container ">
             <div className="row d-flex justify-content-center  popularCategory">
-              <button type="button" class="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>gserhhre</button>
-              <button type="button" class="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>ahrebd</button>
-              <button type="button" class="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>dbdbhggh</button>
-              <button type="button" class="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>dbnndd</button>
-              <button type="button" class="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>ggddg</button>
+              <button type="button" class="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3 btncategory" onClick={search()}>lead</button>
+              <button type="button" class="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3 btncategory" onClick={search()}>event</button>
+              <button type="button" class="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3 btncategory" onClick={search()}>form</button>
+              <button type="button" class="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3 btncategory" onClick={search()}>meet</button>
+              <button type="button" class="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3 btncategory" onClick={search()}>stafmeeting</button>
             </div>
 
-            <div className="row  d-flex justify-content-center popularCategory">
-              <button type="button" className="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>dewegfvr</button>
+            {/* <div className="row  d-flex justify-content-center popularCategory">
+              <button type="button" className="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>accesorice</button>
               <button type="button" className="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>dfdfssfzc</button>
               <button type="button" className="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>fffffffff</button>
               <button type="button" className="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>fffff</button>
               <button type="button" className="buttonpopularCategory btn btn-outline-primary mt-3 mb-3 mr-3" onClick={search()}>fffff</button>
 
-            </div>
+            </div> */}
           </div>
         </div>
 
