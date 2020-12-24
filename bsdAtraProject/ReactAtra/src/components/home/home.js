@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Navbar } from 'react-bootstrap';
-import img2 from '../../assets/m.jpg';
+import img2 from '../../assets/home1.jpg';
 import './home.css';
 import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
@@ -27,8 +27,18 @@ function Home(props) {
     <>
 
       <div class="container-fluid">
-        <div class="row   a">
-       <div class="selectt  col-9"><Select /></div> 
+        <div class="row col-12  a">
+          {
+            <div className="container-fluid"> 
+            <img
+              className="d-block ggggg"
+              src={img2}
+              alt="First slide"
+
+            />
+            </div>
+          }
+          <div class="selectt  "><Select /></div>
           {/* <div class="container input col-9 ">
             <div class="container searchcontainer col-0  ">
               <p class="p pt-3 ">

@@ -36,7 +36,6 @@ class SelectComponent extends React.Component {
     this.props.fetchCards();
     console.log(this.props.categories + "this is my categories");
     ///  console.log(this.props.categories.id);
-
   }
 
   componentDidUpdate(prevProps, prevstate) {
@@ -46,7 +45,6 @@ class SelectComponent extends React.Component {
 
     if (prevstate.category != this.state.category)
       if (this.state.category._id && this.props.cardList.length) {
-
         this.props.cardList.forEach(card => {
           if (card.categoryId === this.state.category._id) {
             cards.push(card);
@@ -85,10 +83,7 @@ class SelectComponent extends React.Component {
   }
 
   yourChangeHandler(event) {
-
-  
   this.setState({flagPopup:false})
-
     this.setState({ flagPopup: true })
     this.props.categories.forEach(async (element) => {
       if (element.categoryName === event.target.value) {
@@ -96,10 +91,8 @@ class SelectComponent extends React.Component {
         console.log(this.state.category)
       }
     });
-
-
   }
-
+  
   render() {
     return (
       <div>
@@ -140,7 +133,6 @@ export default connect(
         dispatch(fechCategories())
       }
     }
-
   }
 )(SelectComponent)
 

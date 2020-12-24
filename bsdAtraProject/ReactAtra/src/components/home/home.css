@@ -1,8 +1,8 @@
 @import "~bootstrap/dist/css/bootstrap.css";
   .a{
       
-    height: 90vh;
-      background-image: url('../../assets/home1.jpg') ;  
+     height: 90vh;
+      /* background-image: url('../../assets/home1.jpg') ;   */
       background-repeat: no-repeat; 
     }
     .input{
@@ -75,15 +75,16 @@ opacity: 1; */
   }
  .btncategory{
      width: 30vh;
+     
  }
   .popularCategory{
-      
+      padding-top: 0%;
       height: 15vh;
      
   }
   .selectt{
-      padding-top: 54vh;
-      padding-left: 120vh;
+       /* padding-top: 2vh; */
+      padding-left: 120vh;  
   }
 /* .buttonpopularCategory{
     top: 1223px;
@@ -96,3 +97,8 @@ opacity: 1; */
     border-radius: 34px;
     opacity: 1;
 } */
+.ggggg{
+    width: 100%;
+    height: 100%;
+    margin-right: 50%;
+  }
