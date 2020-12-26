@@ -6,20 +6,8 @@ const router = express.Router();
 
 const CardSchema = require('../models/card');
 
-// CREATE StartUp
-router.route('/create-startup').post((req, res, next) => {
-    console.log(req.body)
-    CardSchema.create(req.body, (error, data) => {
-        debugger;
-        if (error) {
-
-            return next(error)
-        } else {
-            console.log(data)
-            res.json(data)
-        }
-    })
-});
+ 
+ 
 
 // READ Card
 router.get('/allCard', (req, res) => {
@@ -35,6 +23,16 @@ router.get('/allCard', (req, res) => {
 
 })
 
+
+ 
+  router.get('/cardById/:id', function(req, res, next) {
+    console.log("yes");
+  CardSchema.findById(req.params.id, function (err, post) {
+    if (err) return next(err);
+    res.json(post);
+    console.log(post);
+  });
+});
 // Get Single Card
 // router.get('/cardById/:id', (req, res) => {
 //     debugger;
@@ -49,15 +47,5 @@ router.get('/allCard', (req, res) => {
 //         }
 //     })
 // })
- 
-  router.get('/cardById/:id', function(req, res, next) {
-    console.log("yes");
-  CardSchema.findById(req.params.id, function (err, post) {
-    if (err) return next(err);
-    res.json(post);
-    console.log(post);
-  });
-});
-
 module.exports = router;
 

@@ -1,13 +1,12 @@
 @import "~bootstrap/dist/css/bootstrap.css";
-  .a{
+  .aa{
       
      height: 90vh;
-      /* background-image: url('../../assets/home1.jpg') ;   */
+      background-image: url('../../assets/home1.jpg') ;  
       background-repeat: no-repeat; 
     }
     .input{
-        /* top: 613px; */
-/* margin-left: 210px; */
+   
 margin-top:368px;
 width: 943px;
 height: 60px;
@@ -83,8 +82,9 @@ opacity: 1; */
      
   }
   .selectt{
-       /* padding-top: 2vh; */
+     padding-top:54vh;
       padding-left: 120vh;  
+      background-attachment: fixed;
   }
 /* .buttonpopularCategory{
     top: 1223px;

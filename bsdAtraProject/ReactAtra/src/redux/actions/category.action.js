@@ -21,16 +21,5 @@ export function fechCategories() {
  
         
     }
-    // export function fechCategories() {
-        
-
-    //     return async (dispatch) => {
-    //         const categories = await cardService.fetchCardById();
-    //        dispatch(setCategory(categories));
-    //         console.log(categories);
-          
-           
-    
-    //     }
-
+   
   }

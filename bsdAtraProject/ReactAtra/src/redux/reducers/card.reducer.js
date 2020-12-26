@@ -14,7 +14,7 @@ export default function CardReducer(state = initialState, action) {
         case SHOW_CARDS:
             return { ...state,  cardList: action.payload }
 
-        default: return state
+        default:return state
 
     }
 

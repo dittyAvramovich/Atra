@@ -6,16 +6,12 @@ import { fetchCards } from '../../redux/actions/card.action';
 import { fechCategories } from '../../redux/actions/category.action';
 import Popup from '../popup/popup';
 
-const options = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' }
-]
+
 
 class SelectComponent extends React.Component {
 
 
-  constructor(props) {
+constructor(props) {
     super(props);
     this.state = {
       categoryId: 2,
@@ -25,17 +21,17 @@ class SelectComponent extends React.Component {
 
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    //this.handleChange = this.handleChange.bind(this);
   }
 
 
   componentDidMount() {
     console.log(this.props.categories);
-    // this.props.fechCategories();
+
     debugger
     this.props.fetchCards();
     console.log(this.props.categories + "this is my categories");
-    ///  console.log(this.props.categories.id);
+
   }
 
   componentDidUpdate(prevProps, prevstate) {
@@ -61,29 +57,22 @@ class SelectComponent extends React.Component {
 
   }
 
+  // handleChange = (e) => {
+
+  //   const state = this.state
+  //   state[e.target.name] = e.target.value;
+  //   this.setState(state);
+  //   console.log("category Selected!!", this.state.categoryId);
+  //   this.props.fechIdCard(this.state.categoryId);
+  // }
 
 
-  //  componentDidMount=()=>{
-  // const dataFromServer = await startUpservice.getStartUp();
-
-  //  }
-  handleChange = (e) => {
-    //  this.setState({category:e.target});
-    //  console.log("category Selected!!",this.state.category);
-    const state = this.state
-    state[e.target.name] = e.target.value;
-    this.setState(state);
-    console.log("category Selected!!", this.state.categoryId);
-    this.props.fechIdCard(this.state.categoryId);
-  }
-
-
-  setFlagPopup=()=>{
-    this.setState({flagPopup:false})
+  setFlagPopup = () => {
+    this.setState({ flagPopup: false })
   }
 
   yourChangeHandler(event) {
-  this.setState({flagPopup:false})
+    this.setState({ flagPopup: false })
     this.setState({ flagPopup: true })
     this.props.categories.forEach(async (element) => {
       if (element.categoryName === event.target.value) {
@@ -92,7 +81,7 @@ class SelectComponent extends React.Component {
       }
     });
   }
-  
+
   render() {
     return (
       <div>
@@ -135,45 +124,4 @@ export default connect(
     }
   }
 )(SelectComponent)
-
-
-
-
-
-
-
-
-
-//   constructor(props) {
-//     super(props)
-//     debugger;
-//    this.state=options;
-//     this.state = {
-//      category:"",
-
-//     };
-//   }
-//   setCategory=(category)=>{
-
-// this.setState({category}) 
-// console.log(category);
-//   }
-//   render(){
-//     return(
-//       <>
-//   <Select options={options} value={this.state.value} onChange={(e)=>this.setCategory(e.target.value)}/>
-
-
-
-//       </>
-//     );
-
-
-
-
-// const Selectt = () => (
-
-// )
-// export default Selectt;
-
 

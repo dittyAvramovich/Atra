@@ -31,17 +31,17 @@ app.use((req, res, next) => {
     }
     next();
 });
-
-// app.use(express.json());
+ 
 app.use(bodyParser.json())
-// app.listen(3000,()=>{console.log("4000")})
+ 
 
 
 app.use('/card',cardRoute);
  app.use('/category',categoryRoute);
 
 
-app.get('/', (req, res) => {
+app.get('/', (req, res) => 
+{
     console.log("come")
     res.status(200).json({
         message: "hellow"
