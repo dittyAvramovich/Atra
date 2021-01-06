@@ -71,10 +71,11 @@ constructor(props) {
     this.setState({ flagPopup: false })
   }
 
-  yourChangeHandler(event) {
-    this.setState({ flagPopup: false })
-    this.setState({ flagPopup: true })
-    this.props.categories.forEach(async (element) => {
+  yourChangeHandler(event)
+   {
+    this.setState({ flagPopup: false})
+    this.setState({ flagPopup: true})
+    this.props.categories.forEach(async(element) => {
       if (element.categoryName === event.target.value) {
         await this.setState({ category: element })
         console.log(this.state.category)
